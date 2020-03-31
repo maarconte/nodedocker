@@ -1,0 +1,29 @@
+version: '3.7'
+
+services:
+  redis:
+    image: redis
+    container_name: cache
+    volumes:
+      - ./redis:/data
+    expose:
+      - 6379
+  app:
+     build: ./app
+     volumes:
+     - ./:/app
+     links:
+     - redis
+     ports:
+     - 8090:8090
+  api:
+    build: ./api
+    environment:
+      - REDIS_HOST=cache
+      - REDIS_PORT=6379
+    depends_on:
+      - redis
+    links:
+      - redis
+    ports:
+      - 3000:3000

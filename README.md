@@ -1,9 +1,10 @@
-# Nodedocker
+# TP2:
 
-Container NodeJs + React JS
+## Multi-conteneurs:
 
-## Build image :
-```docker build -t nodedocker```
+Mettre à disposition un fichier docker-compose qui permet de lancer un serveur web node avec une BDD Redis qui compte chaque connexion.
 
-## Run image :
-```docker run -p 8080:8090 nodedocker```
+Une fois le conteneur lancé on doit pouvoir se connecter en local via son navigateur et chaque connexion doit être comptée et stockée dans Redis.
+
+### Start the app :
+```docker-compose up```
