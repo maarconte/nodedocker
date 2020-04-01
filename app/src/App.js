@@ -27,9 +27,12 @@ export default class App extends Component {
     return (
       <div className="App">
       <header className="App-header">
-        <p>
-    Vous vous êtes connecté <strong>{this.state.count}</strong> fois.
-        </p>
+        <div className="App-desc">
+        <h1>TP2: Multi-conteneurs</h1>
+        <p>Mettre à disposition un fichier docker-compose qui permet de lancer un serveur web node avec une BDD Redis qui compte chaque connexion.</p>
+        </div>
+        <h2>Connexions</h2>
+        <span className="App-counter">{this.state.count}</span>
       </header>
     </div>
     )
