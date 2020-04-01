@@ -14,12 +14,12 @@ export default class App extends Component {
   }
 
   getVisits = () => {
-    axios.get(`http://localhost:3000/numbers`)
+    axios.get(`http://localhost:3000/`)
       .then(res => {
-        /* this.setState({
-          count: res.data.numbers
-        }); */
-        console.log(res);
+         this.setState({
+          count: res.data.count
+        });
+        console.log(res.data);
       })
   }
 
