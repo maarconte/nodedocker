@@ -1,6 +1,4 @@
 'use strict';
-
-const bodyParser =  require("body-parser");
 const express = require('express');
 
 // Constants
@@ -9,8 +7,10 @@ const HOST = '0.0.0.0';
 
 // App
 const app = express();
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: false }));
+
+app.get('/', function (res) {
+	res.send("Coucou");
+  });
 
 app.listen(PORT);
 console.log(`Running on http://${HOST}:${PORT}`);
